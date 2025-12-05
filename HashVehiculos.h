@@ -41,4 +41,3 @@ size_t nElems;
  size_t hashStr(const string &s) const;
    void rehash(size_t newM);
 };
-
