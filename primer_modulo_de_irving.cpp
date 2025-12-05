@@ -118,7 +118,7 @@ void Grafo::eliminarNodo(int id) {
 void Grafo::agregarCalle(int origen, int destino, float distancia, bool dobleVia) {
     // Verificamos que ambas intersecciones existan
     if (!existeNodo(origen) || !existeNodo(destino)) {
-        cout << "una o las dos intersecciones no existen\n";
+        cout<< "una o las dos intersecciones no existen\n";
         return;
     }
     
@@ -188,8 +188,8 @@ void Grafo::eliminarCalle(int origen, int destino, bool dobleVia) {
     bool eliminada = false;
     
 // elimina la calle en el sentido origen -> destino
-    for (int i = 0; i < conexiones[posOrigen].size(); i++) {
-        if (conexiones[posOrigen][i].destino == destino) {
+    for (int i = 0; i < conexiones[posOrigen].size(); i++){
+        if (conexiones[posOrigen][i].destino == destino){
             conexiones[posOrigen].erase(conexiones[posOrigen].begin() + i);
             eliminada = true;
             break;
@@ -197,9 +197,9 @@ void Grafo::eliminarCalle(int origen, int destino, bool dobleVia) {
     }
     
 // se valida si es doble via para eliminar la calle en sentido contrario
-    if(dobleVia) {
-        for (int i = 0; i < conexiones[posDestino].size(); i++) {
-            if (conexiones[posDestino][i].destino == origen) {
+    if(dobleVia){
+        for(int i = 0; i < conexiones[posDestino].size(); i++){
+            if(conexiones[posDestino][i].destino == origen) {
                 conexiones[posDestino].erase(conexiones[posDestino].begin() + i);
                 eliminada = true;
                 break;
@@ -209,7 +209,7 @@ void Grafo::eliminarCalle(int origen, int destino, bool dobleVia) {
     
     if(eliminada){
         cout << " la calle " << origen << " -> " << destino << " fue eliminada" << endl;
-    } else {
+    } else{
         cout << "la calle ingresada no existe" << endl;
     }
 }
